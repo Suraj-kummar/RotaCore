@@ -1,0 +1,210 @@
+/* Wikipedia-Inspired Styles */
+@font-face {
+    font-family: 'FK Grotesk Neue';
+    src: url('fonts/FKGroteskNeue-Regular.woff2') format('woff2'),
+         url('fonts/FKGroteskNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'FK Grotesk Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #202122;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #a2a9b1;
+}
+
+/* Header */
+header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 10px 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: normal;
+    font-family: 'Linux Libertine', 'Times New Roman', serif;
+    display: inline-block;
+    color: #202122;
+}
+
+nav {
+    float: right;
+}
+
+nav a {
+    color: #0645ad;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h2 {
+    font-size: 22px;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 4px;
+    margin: 20px 0 10px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 15px 0 8px;
+}
+
+/* Forms */
+form {
+    background: #f8f9fa;
+    padding: 16px;
+    border: 1px solid #a2a9b1;
+    max-width: 480px;
+    margin-bottom: 24px;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    color: #202122;
+    margin-bottom: 6px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #a2a9b1;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    background-color: #3366cc;
+    color: white;
+    border: 1px solid #2a4b8d;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2a4b8d;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #a2a9b1;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #a2a9b1;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #eaecf0;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Links */
+a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #0b0080;
+}
+
+/* Notifications */
+.notifications {
+    background: #eaecf0;
+    padding: 12px;
+    border: 1px solid #a2a9b1;
+    margin-bottom: 16px;
+}
+
+.notifications li {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Error Messages */
+.error {
+    background: #fee7e6;
+    color: #b32424;
+    padding: 10px;
+    border: 1px solid #d33;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Buttons */
+button, .action-btn {
+    background-color: #3366cc;
+    color: white;
+    border: 1px solid #2a4b8d;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover, .action-btn:hover {
+    background-color: #2a4b8d;
+}
+
+.delete-btn {
+    background-color: #d33;
+    border: 1px solid #a00;
+}
+
+.delete-btn:hover {
+    background-color: #a00;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 16px;
+    color: #54595d;
+    font-size: 12px;
+    border-top: 1px solid #a2a9b1;
+    background: #f8f9fa;
+}
