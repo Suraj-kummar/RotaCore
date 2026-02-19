@@ -1,7 +1,7 @@
-package com.shiftmanager.dao;
+package com.rotacore.dao;
 
-import com.shiftmanager.model.Shift;
-import com.shiftmanager.util.DBConnection;
+import com.rotacore.model.Shift;
+import com.rotacore.util.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class ShiftDAO {
     public void createShift(Shift shift) throws SQLException {
         String sql = "INSERT INTO shifts (employee_id, start_time, end_time, status) VALUES (?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, shift.getEmployeeId());
             ps.setTimestamp(2, shift.getStartTime());
             ps.setTimestamp(3, shift.getEndTime());
@@ -23,7 +23,7 @@ public class ShiftDAO {
     public void updateShift(Shift shift) throws SQLException {
         String sql = "UPDATE shifts SET start_time = ?, end_time = ?, status = 'updated' WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setTimestamp(1, shift.getStartTime());
             ps.setTimestamp(2, shift.getEndTime());
             ps.setInt(3, shift.getId());
@@ -32,9 +32,9 @@ public class ShiftDAO {
     }
 
     public void deleteShift(int shiftId) throws SQLException {
-        String sql = "UPDATE shifts SET status = 'deleted' WHERE id = ?";  // Soft delete
+        String sql = "UPDATE shifts SET status = 'deleted' WHERE id = ?"; // Soft delete
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, shiftId);
             ps.executeUpdate();
         }
@@ -44,7 +44,7 @@ public class ShiftDAO {
         List<Shift> shifts = new ArrayList<>();
         String sql = "SELECT * FROM shifts WHERE employee_id = ? AND status != 'deleted' ORDER BY start_time ASC";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, employeeId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -64,8 +64,8 @@ public class ShiftDAO {
         List<Shift> shifts = new ArrayList<>();
         String sql = "SELECT * FROM shifts WHERE status != 'deleted' ORDER BY start_time ASC";
         try (Connection conn = DBConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Shift shift = new Shift();
                 shift.setId(rs.getInt("id"));

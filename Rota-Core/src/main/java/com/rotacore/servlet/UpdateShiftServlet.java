@@ -1,9 +1,9 @@
-package com.shiftmanager.servlet;
+package com.rotacore.servlet;
 
-import com.shiftmanager.dao.NotificationDAO;
-import com.shiftmanager.dao.ShiftDAO;
-import com.shiftmanager.model.Notification;
-import com.shiftmanager.model.Shift;
+import com.rotacore.dao.NotificationDAO;
+import com.rotacore.dao.ShiftDAO;
+import com.rotacore.model.Notification;
+import com.rotacore.model.Shift;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +18,8 @@ import java.time.format.DateTimeFormatter;
 
 @WebServlet("/updateShift")
 public class UpdateShiftServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             int shiftId = Integer.parseInt(request.getParameter("shiftId"));
             int employeeId = Integer.parseInt(request.getParameter("employeeId"));
@@ -54,7 +55,8 @@ public class UpdateShiftServlet extends HttpServlet {
 
             // Add notification
             NotificationDAO notifDAO = new NotificationDAO();
-            Notification notif = new Notification(employeeId, "Your shift (ID: " + shiftId + ") has been updated to " + startTime + " - " + endTime);
+            Notification notif = new Notification(employeeId,
+                    "Your shift (ID: " + shiftId + ") has been updated to " + startTime + " - " + endTime);
             notifDAO.addNotification(notif);
             response.sendRedirect("admin.jsp");
         } catch (SQLException e) {

@@ -1,6 +1,6 @@
-package com.shiftmanager.servlet;
+package com.rotacore.servlet;
 
-import com.shiftmanager.model.User;
+import com.rotacore.model.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter({"/admin.jsp", "/employee.jsp"})
+@WebFilter({ "/admin.jsp", "/employee.jsp" })
 public class AuthFilter implements Filter {
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
@@ -31,7 +32,10 @@ public class AuthFilter implements Filter {
     }
 
     @Override
-    public void init(FilterConfig filterConfig) {}
+    public void init(FilterConfig filterConfig) {
+    }
+
     @Override
-    public void destroy() {}
+    public void destroy() {
+    }
 }

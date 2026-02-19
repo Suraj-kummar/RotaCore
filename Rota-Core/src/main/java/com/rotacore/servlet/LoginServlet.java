@@ -1,7 +1,7 @@
-package com.shiftmanager.servlet;
+package com.rotacore.servlet;
 
-import com.shiftmanager.dao.UserDAO;
-import com.shiftmanager.model.User;
+import com.rotacore.dao.UserDAO;
+import com.rotacore.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,8 @@ import java.sql.SQLException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 

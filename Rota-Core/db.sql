@@ -1,5 +1,5 @@
-CREATE DATABASE shift_manager;
-USE shift_manager;
+CREATE DATABASE rotacore;
+USE rotacore;
 
 -- Users table
 CREATE TABLE users (

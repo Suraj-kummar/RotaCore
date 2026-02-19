@@ -1,8 +1,8 @@
-package com.shiftmanager.servlet;
+package com.rotacore.servlet;
 
-import com.shiftmanager.dao.NotificationDAO;
-import com.shiftmanager.dao.ShiftDAO;
-import com.shiftmanager.model.Notification;
+import com.rotacore.dao.NotificationDAO;
+import com.rotacore.dao.ShiftDAO;
+import com.rotacore.model.Notification;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,9 +14,10 @@ import java.sql.SQLException;
 
 @WebServlet("/deleteShift")
 public class DeleteShiftServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         int shiftId = Integer.parseInt(request.getParameter("shiftId"));
-        int employeeId = Integer.parseInt(request.getParameter("employeeId"));  // Pass from form
+        int employeeId = Integer.parseInt(request.getParameter("employeeId")); // Pass from form
 
         ShiftDAO shiftDAO = new ShiftDAO();
         try {

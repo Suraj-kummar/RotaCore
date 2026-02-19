@@ -1,7 +1,7 @@
-package com.shiftmanager.dao;
+package com.rotacore.dao;
 
-import com.shiftmanager.model.User;
-import com.shiftmanager.util.DBConnection;
+import com.rotacore.model.User;
+import com.rotacore.util.DBConnection;
 
 import java.security.MessageDigest;
 import java.sql.*;
@@ -12,11 +12,11 @@ public class UserDAO {
     public void registerUser(User user) throws SQLException {
         String sql = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, user.getName());
             ps.setString(2, user.getEmail());
             ps.setString(3, hashPassword(user.getPassword()));
-            ps.setString(4, "employee");  // Default to employee
+            ps.setString(4, "employee"); // Default to employee
             ps.executeUpdate();
         }
     }
@@ -24,7 +24,7 @@ public class UserDAO {
     public User loginUser(String email, String password) throws SQLException {
         String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, email);
             ps.setString(2, hashPassword(password));
             ResultSet rs = ps.executeQuery();
@@ -44,8 +44,8 @@ public class UserDAO {
         List<User> employees = new ArrayList<>();
         String sql = "SELECT * FROM users WHERE role = 'employee'";
         try (Connection conn = DBConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 User user = new User();
                 user.setId(rs.getInt("id"));

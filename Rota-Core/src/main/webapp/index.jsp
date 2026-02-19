@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.shiftmanager.model.User" %>
+<%@ page import="com.rotacore.model.User" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shift Manager</title>
+    <title>RotaCore</title>
     <style>
         * {
             margin: 0;
@@ -135,7 +135,7 @@
 %>
 <header>
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-        <h1>Shift Manager</h1>
+        <h1>RotaCore</h1>
         <nav style="display: flex; align-items: center;">
             <a href="login.jsp">Login</a>
             <a href="register.jsp">Sign Up</a>
@@ -145,8 +145,8 @@
 
 <div class="container">
     <section class="hero">
-        <h2>Welcome to Shift Manager</h2>
-        <p>Shift Manager is a modern platform designed to streamline workforce scheduling, track shifts, and improve team productivity.</p>
+        <h2>Welcome to RotaCore</h2>
+        <p>RotaCore is a modern platform designed to streamline workforce scheduling, track shifts, and improve team productivity.</p>
         <div class="hero-buttons">
             <a href="login.jsp" class="primary-btn">Sign In</a>
             <a href="register.jsp">Sign Up</a>
@@ -154,8 +154,8 @@
     </section>
 
     <article>
-        <h3>About Shift Manager</h3>
-        <p>Shift Manager helps organizations schedule and manage employee shifts efficiently, improving operational productivity and communication.</p>
+        <h3>About RotaCore</h3>
+        <p>RotaCore helps organizations schedule and manage employee shifts efficiently, improving operational productivity and communication.</p>
 
         <h3>Features</h3>
         <p>- Easy shift creation and management.</p>
@@ -164,12 +164,12 @@
         <p>- Clean and responsive design.</p>
 
         <h3>Benefits</h3>
-        <p>By using Shift Manager, organizations can reduce administrative work, minimize scheduling errors, and ensure employee satisfaction.</p>
+        <p>By using RotaCore, organizations can reduce administrative work, minimize scheduling errors, and ensure employee satisfaction.</p>
     </article>
 </div>
 
 <footer>
-    <p>&copy; 2025 Shift Manager. All rights reserved.</p>
+    <p>&copy; 2025 RotaCore. All rights reserved.</p>
 </footer>
 </body>
 </html>
