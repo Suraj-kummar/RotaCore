@@ -749,7 +749,7 @@ If you find this project useful, please consider:
 
 **Made with ❤️ by Suraj Kumar**
 
-[Website](https://yourwebsite.com) • [GitHub](https://github.com/Suraj-kummar) • [LinkedIn](https://linkedin.com/in/yourprofile)
+[Website](https://yourwebsite.com) • [GitHub](https://github.com/Suraj-kummar) • [LinkedIn](www.linkedin.com/in/suraj-b85050222)
 
 </div>
 
