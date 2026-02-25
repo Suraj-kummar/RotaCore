@@ -31,7 +31,7 @@ CREATE TABLE notifications (
 
 
 -- admin details = >
--- name = Admin
+-- name = Admin 
 -- password = admin
 -- email = admin@abhishek.com
 
